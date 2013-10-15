@@ -1,0 +1,11 @@
+{
+  "name": "perfversion",
+  "version": "0.0.1",
+  "description": "",
+  "main": "perfversion.js",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "moduload": "0.0.1"
+  }
+}

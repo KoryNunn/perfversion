@@ -1,0 +1,4 @@
+node_modules
+*.browser.js
+/test/modules
+npm-debug.log
