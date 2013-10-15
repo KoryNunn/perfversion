@@ -1,9 +1,9 @@
 {
   "name": "perfversion",
   "version": "0.0.1",
-  "description": "",
+  "description": "tests the performance of multiple versions of multiple node modules",
   "main": "perfversion.js",
-  "author": "",
+  "author": "Kory Nunn",
   "license": "BSD",
   "dependencies": {
     "moduload": "0.0.1"
