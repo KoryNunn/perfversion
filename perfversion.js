@@ -37,7 +37,7 @@ function createBench(callback){
     return bench;
 }
 
-function testVersion(moduleName, version, testFunction, callback){
+function testVersion(moduleName, version, testModulesPath, testFunction, callback){
     moduload(moduleName, version, testModulesPath, function(error, lib){
         var bench = createBench(function(results){
             callback({
@@ -54,7 +54,7 @@ function test(testModulesPath, testModules, testFunction, callback){
     for(var i = 0; i < testModules.length; i++) {
         var testModule = testModules[i];
         for(var j = 0; j < testModule.versions.length; j++) {
-            testVersion(testModule.name, testModule.versions[j], testFunction, callback);
+            testVersion(testModule.name, testModule.versions[j], testModulesPath, testFunction, callback);
         }
     }
 }
