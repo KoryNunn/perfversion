@@ -37,23 +37,17 @@ function createBench(callback){
     return bench;
 }
 
-function testVersion(moduleName, version, testModulesPath, testFunction, callback){
-    moduload(moduleName, version, testModulesPath, function(error, lib){
-        var bench = createBench(function(results){
-            callback({
-                name: moduleName,
-                version: version,
-                results: results
+module.exports = function(testModulesPath){
+    return function(moduleName, version, testFunction, callback){
+        moduload(moduleName, version, testModulesPath, function(error, lib){
+            var bench = createBench(function(results){
+                callback({
+                    name: moduleName,
+                    version: version,
+                    results: results
+                });
             });
+            testFunction(lib, bench);
         });
-        testFunction(lib, bench);
-    });
-}
-
-function test(testModulesPath, testModule, testFunction, callback){
-    for(var j = 0; j < testModule.versions.length; j++) {
-        testVersion(testModule.name, testModule.versions[j], testModulesPath, testFunction, callback);
-    }
-}
-
-module.exports = test;
+    };
+};
