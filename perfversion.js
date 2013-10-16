@@ -50,12 +50,9 @@ function testVersion(moduleName, version, testModulesPath, testFunction, callbac
     });
 }
 
-function test(testModulesPath, testModules, testFunction, callback){
-    for(var i = 0; i < testModules.length; i++) {
-        var testModule = testModules[i];
-        for(var j = 0; j < testModule.versions.length; j++) {
-            testVersion(testModule.name, testModule.versions[j], testModulesPath, testFunction, callback);
-        }
+function test(testModulesPath, testModule, testFunction, callback){
+    for(var j = 0; j < testModule.versions.length; j++) {
+        testVersion(testModule.name, testModule.versions[j], testModulesPath, testFunction, callback);
     }
 }
 
