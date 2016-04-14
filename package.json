@@ -1,6 +1,6 @@
 {
   "name": "perfversion",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "tests the performance of multiple versions of multiple node modules",
   "main": "perfversion.js",
   "author": "Kory Nunn",
